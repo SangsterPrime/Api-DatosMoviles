@@ -29,7 +29,7 @@ export async function remove(id) {
 }
 
 export async function getUserByUsername(username) {
-  const rows = await sql`select * from ${sql(TABLE)} where username = ${username}`;
+  const rows = await sql`select * from ${sql(TABLE)} where nombre = ${username}`;
   if(!rows) {
     const err = new Error("User not found");
     err.status = 404;
@@ -38,4 +38,4 @@ export async function getUserByUsername(username) {
   return rows;
 }
 
-export default { list, getById, create, update, remove };
+export default { list, getById, create, update, remove, getUserByUsername };
