@@ -18,16 +18,6 @@ export async function getUserById(id) {
   return row;
 }
 
-export async function getUserByUsername(username) {
-  const rows = await sql`select * from users where username = ${username}`;
-  if(!rows) {
-    const err = new Error("User not found");
-    err.status = 404;
-    throw err;
-  }
-  return rows;
-}
-
 export async function createUser(payload) {
   const rows = await sql`insert into users ${sql(payload)} returning *`;
   return rows[0];

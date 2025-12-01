@@ -28,4 +28,14 @@ export async function remove(id) {
   return { id };
 }
 
+export async function getUserByUsername(username) {
+  const rows = await sql`select * from ${sql(TABLE)} where username = ${username}`;
+  if(!rows) {
+    const err = new Error("User not found");
+    err.status = 404;
+    throw err;
+  }
+  return rows;
+}
+
 export default { list, getById, create, update, remove };
