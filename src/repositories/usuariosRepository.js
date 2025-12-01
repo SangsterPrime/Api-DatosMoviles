@@ -29,7 +29,7 @@ export async function remove(id) {
 }
 
 export async function getUserByUsername(username) {
-   const rows = await sql`select * from ${ sql(TABLE) } where name = ${username}`;
+   const rows = await sql`select * from ${ sql(TABLE) } where nombre = ${username}`;
    return rows[0] || null;
 }
 
