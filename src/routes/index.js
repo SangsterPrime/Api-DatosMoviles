@@ -7,7 +7,7 @@ import detalle_ventasRouter from "./detalle_ventas.js";
 import movimientos_stockRouter from "./movimientos_stock.js";
 import productosRouter from "./productos.js";
 import proveedoresRouter from "./proveedores.js";
-import usuariosRouter from "./usuarios.js";
+import usersRouter from "./users.js";
 import ventasRouter from "./ventas.js";
 
 const router = Router();
@@ -21,6 +21,6 @@ router.use("/detalle_ventas", detalle_ventasRouter);
 router.use("/movimientos_stock", movimientos_stockRouter);
 router.use("/productos", productosRouter);
 router.use("/proveedores", proveedoresRouter);
-router.use("/usuarios", usuariosRouter);
+router.use("/usuarios", users);
 router.use("/ventas", ventasRouter);
 export default router;
