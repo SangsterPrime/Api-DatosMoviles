@@ -16,4 +16,11 @@ export async function remove(req, res, next) {
   try { await repo.remove(req.params.id); res.status(204).end(); } catch (e) { next(e); }
 }
 
+export async function getUserByUsername(req, res, next) {
+  try {
+    const data = await repo.getUserByUsername(req.params.username, req.body);
+    res.json(data);
+  } catch (e) {next(e);}
+}
+
 export default { list, get, create, update, remove };
