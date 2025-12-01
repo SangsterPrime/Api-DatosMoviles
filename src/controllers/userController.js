@@ -35,4 +35,11 @@ export async function remove(req, res, next) {
   } catch (e) { next(e); }
 }
 
+export async function getUserByUsername(req, res, next) {
+  try {
+    const data = await repo.getUserByUsername(req.params.username, req.body);
+    res.json(data);
+  } catch (e) {next(e);}
+}
+
 export default { list, get, create, update, remove };
